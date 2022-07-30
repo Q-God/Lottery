@@ -1,8 +1,0 @@
-rootProject.name = 'Lottery'
-include 'lottery-application'
-include 'lottery-common'
-include 'lottery-domain'
-include 'lottery-infrastructure'
-include 'lottery-interfaces'
-include 'lottery-rpc'
-

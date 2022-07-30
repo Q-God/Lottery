@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.0</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>org.gq.lottery</groupId>
+    <artifactId>Lottery</artifactId>
+    <packaging>pom</packaging>
+    <version>V1.0</version>
+    <modules>
+        <module>lottery-application</module>
+        <module>lottery-domain</module>
+        <module>lottery-infrastructure</module>
+        <module>lottery-interfaces</module>
+        <module>lottery-rpc</module>
+        <module>lottery-common</module>
+    </modules>
+
+
+    <properties>
+        <!-- Base -->
+        <jdk.version>1.8</jdk.version>
+        <sourceEncoding>UTF-8</sourceEncoding>
+        <!-- DB：mysql、mybatis-->
+        <mybatis_spring_boot.version>2.2.2</mybatis_spring_boot.version>
+        <servlet.version>4.0.0</servlet.version>
+        <jstl.version>1.2</jstl.version>
+        <jasper.version>9.0.2</jasper.version>
+        <fastjson.version>1.2.58</fastjson.version>
+        <dom4j.version>1.6.1</dom4j.version>
+        <commons_lang3.version>3.8</commons_lang3.version>
+        <xstream.version>1.4.10</xstream.version>
+        <dubbo.version>2.7.1</dubbo.version>
+    </properties>
+
+    <dependencyManagement>
+
+        <dependencies>
+            <!--spring-web-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-tomcat</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <!--Mybatis-->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis_spring_boot.version}</version>
+            </dependency>
+            <!--Mysql-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <!--添加jstl标签库依赖模块-->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>jstl</artifactId>
+                <version>${jstl.version}</version>
+            </dependency>
+            <!--添加tomcat依赖-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-tomcat</artifactId>
+            </dependency>
+            <!--使用jsp引擎，springboot内置tomcat没有此依赖-->
+            <dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-jasper</artifactId>
+                <version>${jasper.version}</version>
+            </dependency>
+            <!--fastjson-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <!--demo4j-->
+            <dependency>
+                <groupId>dom4j</groupId>
+                <artifactId>dom4j</artifactId>
+                <version>${dom4j.version}</version>
+            </dependency>
+            <!--commons-lang3-->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons_lang3.version}</version>
+            </dependency>
+            <!--xstream-->
+            <dependency>
+                <groupId>com.thoughtworks.xstream</groupId>
+                <artifactId>xstream</artifactId>
+                <version>${xstream.version}</version>
+            </dependency>
+            <!--dubbo-->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
